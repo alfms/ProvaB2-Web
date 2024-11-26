@@ -20,9 +20,14 @@ function escolherRandomColors(cores, num = 10) {
 //Questao 3:
 // Função que escolhe cor aleatória dentre as 10 cores escolhidas e imprime no console
 function PrintRandom(cores) {
+    // Seleciona uma cor aleatória do array
     const RandomColor = cores[Math.floor(Math.random() * cores.length)];
+
+    // Seleciona todos os elementos que contêm os dados das cores na tabela
     const ColorElements = document.querySelectorAll('#colornamestable .innerbox');
     let corHex = 'N/A';
+
+    // Percorre os elementos para encontrar o hex correspondente à cor selecionada
     ColorElements.forEach(elemento => {
         const elementoColorName = elemento.querySelector('.colornamespan a');
         if (elementoColorName && elementoColorName.textContent.trim().toLowerCase() === RandomColor) {
@@ -32,6 +37,8 @@ function PrintRandom(cores) {
             }
         }
     });
+
+    // Imprime a cor aleatória e seu código hexadecimal no console
     console.log(`Cor selecionada: ${RandomColor} (${corHex})`);
 }
 
